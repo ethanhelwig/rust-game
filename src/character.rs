@@ -1,5 +1,6 @@
 use crate::class::*;
 
+#[derive(Clone)]
 pub struct Character {
     name: String,
     class: Class,
@@ -98,10 +99,11 @@ impl Character {
         }
     }
 
-    pub fn values(&self) -> String {
-        format!(
-            "Name;{};Class;{};Level;{};Health;{};Mana;{};STR;{};WIS;{};INT;{};AGL;{};STA;{};STH;{};",
-            self.name, self.class, self.level, self.health, self.mana, self.strength, self.wisdom, self.intellect, self.agility, self.stamina, self.stealth
-        )
+    pub fn headers() -> Vec<String> {
+        vec!["Name".to_string(), "Class".to_string(), "Level".to_string(), "Health".to_string(), "Mana".to_string(), "STR".to_string(), "WIS".to_string(), "INT".to_string(), "AGL".to_string(), "STA".to_string(), "STH".to_string()]
+    }
+
+    pub fn values(&self) -> Vec<String> {
+        vec![self.name.to_string(), self.class.to_string(), self.level.to_string(), self.health.to_string(), self.mana.to_string(), self.strength.to_string(), self.wisdom.to_string(), self.intellect.to_string(), self.agility.to_string(), self.stamina.to_string(), self.stealth.to_string()]
     }
 }

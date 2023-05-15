@@ -3,5 +3,13 @@
 version = 3
 
 [[package]]
+name = "cli-tables"
+version = "0.1.0"
+source = "git+https://github.com/ethanhelwig/cli-tables#53d669b6d60aad2dd5e68543058588e8d28c3745"
+
+[[package]]
 name = "game"
 version = "0.1.0"
+dependencies = [
+ "cli-tables",
+]
